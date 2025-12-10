@@ -1,7 +1,8 @@
-package billingLogic;
+package billing;
 
-abstract class Billing implements IUtility {
+public class GasBill extends IUtility {
     public double calcStandingCharge(double dailyRate, Integer days) {
         return (dailyRate / 100) * days;
     }
+
 }
