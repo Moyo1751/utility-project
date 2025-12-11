@@ -15,5 +15,6 @@
       "c:\\Users\\moyob\\Downloads\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.fxml.jar",
       "c:\\Users\\moyob\\Downloads\\openjfx-25.0.1_windows-x64_bin-sdk\\javafx-sdk-25.0.1\\lib\\javafx.controls.jar"
     ]
-  }
+  },
+  "maven.view": "flat"
 }
