@@ -27,7 +27,9 @@ class GasBillTest {
 
     @Test
     void testCalcCost() {
-        double result = gasBill.calcCost(100.0);
-        assertEquals(100.0, result, 0.01, "Cost should equal usage amount");
+        double usageInKWh = 100.0;
+        double expectedCost = (usageInKWh * 0.03797) + gasBill.getStandingCharge();
+        double result = gasBill.calcCost(usageInKWh);
+        assertEquals(expectedCost, result, 0.01, "Cost should be usage * rate + standing charge");
     }
 }

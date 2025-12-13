@@ -14,7 +14,15 @@ public abstract class Utility {
 
     public abstract double calcTotalCost(double cost, double vatAmount);
 
+    public double calcVat(double amount, double vat) {
+        return roundToTwoDecimals(amount * vat);
+    }
+
     public String formatCost(double cost) {
         return String.format("£%.2f", cost);
+    }
+
+    protected double roundToTwoDecimals(double value) {
+        return Math.round(value * 100.0) / 100.0;
     }
 }

@@ -17,12 +17,19 @@ public class ElectricityBill extends Utility {
         return standingCharge;
     }
 
+    public double getElectricUsage(double openingDay, double closingDay,
+            double openingNight, double closingNight) {
+        double usageDay = calcUsage(openingDay, closingDay);
+        double usageNight = calcUsage(openingNight, closingNight);
+        return calcTotalUsage(usageDay, usageNight);
+    }
+
     public double getElectricCost(double usage) {
         return calcCost(usage);
     }
 
     public double getVatAmount(double amount) {
-        return calcVat(amount);
+        return calcVat(amount, this.vat.getVat());
     }
 
     public double getTotalCost(double electricCost, double vatAmount) {
@@ -38,14 +45,10 @@ public class ElectricityBill extends Utility {
     }
 
     public double calcCost(double usage) {
-        return usage * this.electricUnitRate;
-    }
-
-    public double calcVat(double amount) {
-        return amount * this.vat.getVat();
+        return roundToTwoDecimals(usage * this.electricUnitRate + this.standingCharge);
     }
 
     public double calcTotalCost(double electricCost, double vatAmount) {
-        return this.standingCharge + electricCost + vatAmount;
+        return electricCost + vatAmount;
     }
 }

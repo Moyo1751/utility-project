@@ -3,10 +3,10 @@ public class App {
         double dailyStandingCharge = 22.63;
         double electricUnitRate = 0.19349;
         int standingChargeDays = 33;
-        double openingElectricReadingNight = 40470.637;
-        double closingElectricReadingNight = 40516.687;
-        double openingElectricReadingDay = 37386.998;
-        double closingElectricReadingDay = 37623.210;
+        double openingElectricReadingDay = 40470.637;
+        double closingElectricReadingDay = 40516.687;
+        double openingElectricReadingNight = 37386.998;
+        double closingElectricReadingNight = 37623.210;
         double vatRate = 0.05;
 
         double standingCharge = new App().calcStandingCharge(dailyStandingCharge, standingChargeDays);
