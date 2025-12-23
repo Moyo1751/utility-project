@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterEach;
+
 class GasBillTest {
 
     private GasBill gasBill;
@@ -11,6 +13,11 @@ class GasBillTest {
     @BeforeEach
     void setUp() {
         gasBill = new GasBill("UK");
+    }
+
+    @AfterEach
+    void tearDown() {
+        gasBill = null;
     }
 
     @Test

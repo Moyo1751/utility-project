@@ -14,10 +14,9 @@ public class BaseDisplay {
 
     public BaseDisplay() {
         System.out.println("============ Welcome to the Utility Billing System ============");
-        System.out.print("Please enter your name: ");
-        this.name = scanner.nextLine();
-        System.out.print("Please enter your location (US/UK/FR/IT): ");
-        String location = scanner.nextLine();
+        CreateAccountDisplay createAccountDisplay = new CreateAccountDisplay();
+        this.name = createAccountDisplay.getName();
+        String location = createAccountDisplay.getLocation();
         System.out.println("Hello, " + name + "! Let's generate your utility bill.");
         electricBill = new ElectricityBill(location);
         gasBill = new GasBill(location);
